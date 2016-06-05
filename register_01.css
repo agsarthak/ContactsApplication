@@ -1,0 +1,21 @@
+body{
+    background-image: url(mainImage2.jpg);
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    opacity: 0.9;
+}
+
+.jumbotron{
+    width: 70%;
+    text-align: center;
+    
+}
+
+.row{
+    align-content: center;
+    vertical-align: middle;
+    text-align: right;
+}

@@ -1,0 +1,200 @@
+<html>
+
+<head>
+    <title>CSE220 Final Project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="index.css" type="text/css">
+</head>
+
+<body id="page-top">
+    <center>
+        <form id="form">
+            <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <!-- Mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                       <img src="images/logo2.jpg" class="img-responsive navbar-brand" alt="logo">
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a class="page-scroll" data-toggle="modal" data-target="#LoginModal" href="#login">Login</a>
+                            </li>
+                            <li>
+                                <a class="page-scroll" href="register_01.jsp">Sign Up</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+
+            <header id="header">
+                <div class="header-content">
+                    <div class="header-content-inner">
+                        <h1>Welcome to XYZ Dating Service</h1>
+                        <hr>
+                        <p>Find your life partner !</p>
+                    </div>
+                </div>
+            </header>
+</center>     
+            <footer class="container-fluid bg-4 text-center">
+                  <p>Made By <a href="#">Sarthak Agarwal</a></p> 
+            </footer>
+            
+   
+    <!--  Login modal starts here  -->
+    <div class="modal fade" id="LoginModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title glyphicon glyphicon-lock">Login</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="user"><span class="glyphicon glyphicon-user"></span> Username</label>
+                            <input type="text" class="form-control" id="user" placeholder="Enter Username" autocomplete="off" required>
+                        </div>
+                        <div id="userError" style="color:red"></div>
+                        <div class="form-group">
+                            <label for="password"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+                        </div>
+                        <div id="passwordError" style="color:red"></div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="" checked>Remember me</label>
+                        </div>
+                        <div id="err" style="color:red"></div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+
+                    <button type="submit" class="btn btn-success pull-right" id="btnLogin"><span class="glyphicon glyphicon-off"></span> Login</button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--  Login modal ends here  -->
+
+    <!--  Signup Modal starts here -->
+    <div class="modal fade" id="LoginModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title glyphicon glyphicon-lock">Login</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="user"><span class="glyphicon glyphicon-user"></span> Username</label>
+                            <input type="text" class="form-control" id="user" placeholder="Enter Username">
+                        </div>
+                        <div id="userError" style="color:red"></div>
+                        <div class="form-group">
+                            <label for="password"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter password">
+                        </div>
+                        <div id="passwordError" style="color:red"></div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="" checked>Remember me</label>
+                        </div>
+                        <div id="err" style="color:red"></div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-default pull-right" data-dismiss="modal" id="btnLogin"><span class="glyphicon glyphicon-off"></span> Login</button>
+                    <button type="submit" class="btn btn-danger btn-default pull-left"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+  
+
+    </form>
+    <!--Signup Modal ends here-->
+
+    <script>
+        
+//         $("#btnLogin").focusout(function(){
+//             usr = $("#user");
+//             pass = $("#password");
+//              
+//             
+//         });
+                              
+                              
+        $("#btnLogin").click(function () {
+            usr = $("#user");
+            pass = $("#password");
+            if (usr.val().length == 0) {
+                $("#userError").html("Please enter a username");
+                usr.css("border", "1px solid red");
+                return;
+            } else if (usr.val().length != 0) {
+                $("#userError").html("");
+                usr.css("border", "1px solid grey");
+            }
+             if (pass.val().length == 0) {
+                $("#passwordError").html("Please enter a password");
+                pass.css("border", "1px solid red");
+                return;
+            } else if (pass.val().length != 0) {
+                $("#passwordError").html("");
+                pass.css("border", "1px solid grey");
+            }
+            if (usr.val().length != 0 && pass.val().length != 0) {
+                var req = $.ajax({
+                    method: "POST",
+                    url: "login.jsp",
+                    data: {
+                        user: usr.val(),
+                        password: pass.val()
+                    },
+                    success: function (response) {
+                        //                        var w = window.open();
+                        //                        $(w.document.body).html(response);
+                        $("#form").html(response);
+                    },
+                    error: function (XMLHttpRequest, jqXHR, textStatus, errorThrown) {
+                        $("#err").html("Check your Username and Password");
+
+                    }
+                });
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>
